@@ -1,0 +1,212 @@
+/* Define Colors */
+@define-color transparent transparent;
+@define-color highlight-background #4c566a; /* nord3 */
+@define-color tooltip-text #d8dee9; /* nord4 */
+@define-color tooltip-background #434c5e; /* nord2 */
+@define-color background #2e3440; /* nord0 */
+@define-color primary-text #d8dee9; /* nord4 */
+@define-color focused-color #88c0d0; /* nord8 */
+@define-color highlight-text #bf616a; /* nord11 */
+@define-color secondary-background #3b4252; /* nord1 */
+@define-color inactive-color #4c566a; /* nord3 */
+@define-color occupied-color #ebcb8b; /* nord13 */
+@define-color hover-color #81a1c1; /* nord9 */
+@define-color temperature-color #8fbcbb; /* nord7 */
+@define-color pulseaudio-color #d08770; /* nord12 */
+@define-color cpu-color #a3be8c; /* nord14 */
+@define-color memory-color #81a1c1; /* nord9 */
+@define-color tray-color #b48ead; /* nord15 */
+@define-color network-color #88c0d0; /* nord8 */
+
+
+/* Styles */
+* {
+  border: none;
+  border-radius: 3px;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+}
+
+window#waybar {
+  background: @transparent;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.empty {
+  background: @transparent;
+}
+
+tooltip {
+  border-width: 2px;
+  border-color: @highlight-background;
+  color: @tooltip-text;
+  background-color: @tooltip-background;
+  font-family: Poppins;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#window {
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 8px;
+  background: @background;
+  color: white;
+}
+
+window.empty {
+  background: @transparent;
+}
+
+
+#custom-appmenu {
+  padding-left: 8px;
+  padding-right: 22px;
+  border-radius: 8px;
+  font-size: 32px;
+  background: @focused-color;
+  transition: background-color 0.5s ease;
+}
+
+#custom-appmenu:hover {
+  background: @secondary-background;
+}
+
+#mode {
+  margin-left: 12px;
+  padding-left: 16px;
+  padding-right: 20px;
+  border-radius: 8px;
+  background: @background;
+}
+
+#workspaces {
+  margin-left: 12px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: @background;
+}
+
+#workspaces button {
+  color: @inactive-color;
+  background: @transparent;
+  border-radius: 0px;
+  padding: 0 5px;
+}
+
+#workspaces button.occupied {
+  color: @occupied-color;
+  background: @transparent;
+  font-size: 12px;
+}
+
+#workspaces button.focused {
+  color: @focused-color;
+  border-bottom: 2px solid @focused-color;
+  background: @highlight-background;
+  border-radius: 5px;
+}
+
+#workspaces button:hover {
+  color: @hover-color;
+  background: @highlight-background;
+}
+
+#workspaces button.active {
+  color: @tooltip-text;
+  font-weight: bold;
+  border-bottom: 2px solid @hover-color;
+}
+
+#temperature {
+  margin-left: 12px;
+  border-radius: 8px;
+  padding: 0 10px;
+  color: @temperature-color;
+  background: @background;
+}
+
+#pulseaudio {
+  margin-left: 10px;
+  border-radius: 8px;
+  padding: 0 10px;
+  color: @pulseaudio-color;
+  background: @background;
+}
+
+#cpu {
+  margin-left: 12px;
+  border-radius: 8px;
+  padding: 10px 10px;
+  color: @cpu-color;
+  background: @background;
+}
+
+#memory {
+  margin-left: 12px;
+  border-radius: 8px;
+  padding: 10px 10px;
+  color: @memory-color;
+  background: @background;
+}
+
+#tray {
+  border-radius: 8px;
+  margin-left: 10px;
+  padding: 0 10px;
+  color: @tray-color;
+  background: @background;
+}
+
+#network {
+  border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 12px;
+  color: @network-color;
+  background: @background;
+}
+
+#clock {
+  border-radius: 8px;
+  padding-left: 10px;
+  margin-left: 10px;
+  background: @background;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin-top: 6px;
+}
+
+.modules-left,
+.modules-right {
+  font-weight: 600;
+}
+
+.modules-left {
+  padding-left: 15px;
+}
+
+.modules-right {
+  padding-right: 15px;
+}
+
+#mpris {
+  margin-left: 12px;
+  border-radius: 8px;
+  padding: 0 20px;
+  color: @cpu-color;
+  background: @background;
+  transition: all 0.5s;
+}
+
+#mpris:hover {
+  color: @hover-color;
+}
