@@ -66,7 +66,6 @@ tooltip {
 #custom-appmenu {
   font-size: 32px;
   color: @primary-text;
-  background: @secondary-background;
   padding-left: 8px;
   padding-right: 22px;
   transition: background 0.3s, color 0.3s;
@@ -134,7 +133,7 @@ tooltip {
 
 /* MPRIS */
 #mpris {
-  color: @cpu-color;
+  color: @temperature-color;
   transition: color 0.3s;
 }
 
