@@ -200,4 +200,6 @@ configuration {
 
 //@theme "/home/admin/.local/share/rofi/themes/simple-tokyonight.rasi"
 
-@theme "/home/admin/.local/share/rofi/themes/nord.rasi"
+//@theme "/home/admin/.local/share/rofi/themes/nord.rasi"
+
+@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
