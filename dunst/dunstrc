@@ -32,14 +32,14 @@ per_monitor_dpi = false
 [urgency_low]
 background = "#282828"  # Gruvbox dark background
 foreground = "#afaf87"  # Gruvbox green (low urgency)
-timeout = 8
+timeout = 3
 
 [urgency_normal]
 background = "#282828"  # Gruvbox dark background
 foreground = "#afaf87"  # Gruvbox light foreground
-timeout = 8
+timeout = 3
 
 [urgency_critical]
 background = "#cc241d"  # Gruvbox red (critical)
 foreground = "#fbf1c7"  # Gruvbox light foreground
-timeout = 8
+timeout = 3

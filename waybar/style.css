@@ -141,6 +141,20 @@ tooltip {
   color: @hover-color;
 }
 
+#custom-suspend {
+  color: @primary-text;
+  padding-right: 10px;
+  font-size: 18px;
+  background: @transparent;
+  transition: all 0.3s;
+  color: @pulseaudio-color;
+  
+}
+
+#custom-suspend:hover {
+  color: @cpu-color;
+}
+
 /* Layout */
 .modules-left {
   padding-left: 15px;
@@ -156,3 +170,4 @@ tooltip {
   margin-top: 6px;
   font-weight: 600;
 }
+

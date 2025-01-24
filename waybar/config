@@ -15,7 +15,8 @@
       "memory",
       "pulseaudio",
       "clock",
-      "tray"
+      "tray",
+      "custom/suspend"
     ],
     "hyprland/workspaces": {
       "disable-scroll": false,
@@ -91,12 +92,12 @@
       "tooltip-format-disconnected": "No active network connection",
       "max-length": 50
     },
-   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}   {volume}%",
-    "format-bluetooth-muted": "   {volume}%",
-    "format-muted": "  {icon}",
-    "format-icons": {
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-bluetooth": "{icon}   {volume}%",
+      "format-bluetooth-muted": "   {volume}%",
+      "format-muted": "  {icon}",
+      "format-icons": {
         "headphone": "󰋋",
         "hands-free": "󱖡",
         "headset": "󰋋",
@@ -104,32 +105,31 @@
         "portable": "",
         "car": "",
         "default": [
-            "󰝟",
-            "󰕿",
-            "󰖀",
-            "󰕾"
+          "󰝟",
+          "󰕿",
+          "󰖀",
+          "󰕾"
         ]
-    },
-    "bluetooth-format-icons": {
+      },
+      "bluetooth-format-icons": {
         "headphone": "󰋋",
         "hands-free": "󱖡",
         "headset": "󰋋",
         "default": [
-            "󰝟",
-            "󰕿",
-            "󰖀",
-            "󰕾"
+          "󰝟",
+          "󰕿",
+          "󰖀",
+          "󰕾"
         ]
+      },
+      "tooltip-format": "{desc}, {volume}%",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-middle": "pavucontrol",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+      "on-bluetooth-connect": "notify-send 'Bluetooth Audio' 'Connected to {desc}'",
+      "on-bluetooth-disconnect": "notify-send 'Bluetooth Audio' 'Disconnected from {desc}'"
     },
-    "tooltip-format": "{desc}, {volume}%",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-middle": "pavucontrol",
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-    "on-bluetooth-connect": "notify-send 'Bluetooth Audio' 'Connected to {desc}'",
-    "on-bluetooth-disconnect": "notify-send 'Bluetooth Audio' 'Disconnected from {desc}'"
-}
-,
     "custom/notification": {
       "tooltip": false,
       "format": "{icon}",
@@ -166,6 +166,12 @@
     },
     "hyprland/window": {
       "max-length": 50
+    },
+    "custom/suspend": {
+      "format": "", 
+      "tooltip-format": "Suspend the system",
+      "on-click": "systemctl suspend",
+      "tooltip": true
     }
   }
 ]
