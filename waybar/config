@@ -1,125 +1,125 @@
-[
-  {
-    "layer": "top",
-    "modules-left": [
-      "custom/appmenu",
-      "hyprland/workspaces",
-      "mpris"
-    ],
-    "modules-center": [
-      "hyprland/window"
-    ],
-    "modules-right": [
-      "network",
-      "cpu",
-      "memory",
-      "pulseaudio",
-      "clock",
-      "tray"
-    ],
-    "hyprland/workspaces": {
-      "disable-scroll": false,
-      "all-outputs": true,
-      "format": "{icon}",
-      "format-icons": {
-        "1Q": "1 ",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5",
-        "6": "6",
-        "7": "7",
-        "8": "8",
-        "9": "9",
-        "10": "10",
-        "urgent": " ",
-        "focused": " "
-      }
-    },
-    "custom/appmenu": {
-      "format": "",
-      "tooltip-format": "Open Application Menu",
-      "on-click": "rofi -show drun",
-      "on-click-right": "rofi -show run",
-      "tooltip": true
-    },
-    "on-click": {
-      "custom/appmenu": "rofi -show drun",
-      "clock": "gnome-calendar",
-      "network": "nm-connection-editor",
-      "tray": "toggle_tray"
-    },
-    "pulseaudio/slider": {
-      "min": 0,
-      "max": 100,
-      "orientation": "horizontal"
-    },
-    "tray": {
-      "spacing": 10
-    },
-    "clock": {
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "{:%H:%M} ",
-      "format-alt": "{:%A, %B %d, %Y}  󰃭"
-    },
-    "cpu": {
-      "format": "{usage}%  ",
-      "tooltip": false
-    },
-    "memory": {
-      "format": "{}%  "
-    },
-    "temperature": {
-      "critical-threshold": 80,
-      "format": "{temperatureC}°C {icon}",
-      "format-icons": [
-        " ",
-        " ",
-        " "
-      ]
-    },
-    "network": {
-      "interface": "*",
-      "interval": 2,
-      "format": "{bandwidthDownBits} ",
-      "format-wifi": "{bandwidthDownBits} ",
-      "format-ethernet": "{bandwidthDownBits} ",
-      "format-disconnected": "Disconnected",
-      "tooltip-format": "{ifname}\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%)\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-      "tooltip-format-ethernet": "{ifname} ({ipaddr}/{cidr})\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-      "tooltip-format-disconnected": "No active network connection",
-      "max-length": 50
-    },
-   "pulseaudio": {
+{
+  "layer": "top",
+  "modules-left": [
+    "custom/appmenu",
+    "battery",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "mpris"
+  ],
+  "modules-right": [
+    "network",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "clock",
+    "tray",
+    "custom/suspend"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1Q": "1 ",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "urgent": " ",
+      "focused": " "
+    }
+  },
+  "custom/appmenu": {
+    "format": "",
+    "tooltip-format": "Open Application Menu",
+    "on-click": "rofi -show drun",
+    "on-click-right": "rofi -show run",
+    "tooltip": true
+  },
+  "on-click": {
+    "custom/appmenu": "rofi -show drun",
+    "clock": "gnome-calendar",
+    "network": "nm-connection-editor",
+    "tray": "toggle_tray"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y}  󰃭"
+  },
+  "cpu": {
+    "format": "{usage}%  ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}%  "
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      " ",
+      " ",
+      " "
+    ]
+  },
+  "network": {
+    "interface": "*",
+    "interval": 2,
+    "format": "{bandwidthDownBits} ",
+    "format-wifi": "{bandwidthDownBits} ",
+    "format-ethernet": "{bandwidthDownBits} ",
+    "format-disconnected": "Disconnected",
+    "tooltip-format": "{ifname}\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
+    "tooltip-format-ethernet": "{ifname} ({ipaddr}/{cidr})\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
+    "tooltip-format-disconnected": "No active network connection",
+    "max-length": 50
+  },
+  "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-bluetooth": "{icon}   {volume}%",
     "format-bluetooth-muted": "   {volume}%",
     "format-muted": "  {icon}",
     "format-icons": {
-        "headphone": "󰋋",
-        "hands-free": "󱖡",
-        "headset": "󰋋",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": [
-            "󰝟",
-            "󰕿",
-            "󰖀",
-            "󰕾"
-        ]
+      "headphone": "󰋋",
+      "hands-free": "󱖡",
+      "headset": "󰋋",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "󰝟",
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
     },
     "bluetooth-format-icons": {
-        "headphone": "󰋋",
-        "hands-free": "󱖡",
-        "headset": "󰋋",
-        "default": [
-            "󰝟",
-            "󰕿",
-            "󰖀",
-            "󰕾"
-        ]
+      "headphone": "󰋋",
+      "hands-free": "󱖡",
+      "headset": "󰋋",
+      "default": [
+        "󰝟",
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
     },
     "tooltip-format": "{desc}, {volume}%",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -128,44 +128,64 @@
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
     "on-bluetooth-connect": "notify-send 'Bluetooth Audio' 'Connected to {desc}'",
     "on-bluetooth-disconnect": "notify-send 'Bluetooth Audio' 'Disconnected from {desc}'"
-}
-,
-    "custom/notification": {
-      "tooltip": false,
-      "format": "{icon}",
-      "format-icons": {
-        "notification": "<span foreground='red'><sup></sup></span>",
-        "none": "",
-        "dnd-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-none": "",
-        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "inhibited-none": "",
-        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": ""
-      },
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "escape": true
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
     },
-    "mpris": {
-      "player": "spotify",
-      "format": "{status_icon} {artist} - {title}",
-      "tooltip-format": "<-M/R->",
-      "on-click": "playerctl play-pause",
-      "on-click-right": "playerctl next",
-      "max-length": 40,
-      "hide-on-empty": true,
-      "status-icons": {
-        "playing": "▶",
-        "paused": "⏸",
-        "stopped": "⏹"
-      }
-    },
-    "hyprland/window": {
-      "max-length": 50
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "mpris": {
+    "player": "spotify",
+    "format": "{status_icon} {artist} - {title}",
+    "tooltip-format": "<-M/R->",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "max-length": 40,
+    "hide-on-empty": true,
+    "status-icons": {
+      "playing": "▶",
+      "paused": "⏸",
+      "stopped": "⏹"
     }
+  },
+  "hyprland/window": {
+    "max-length": 50
+  },
+  "custom/suspend": {
+    "format": "",
+    "tooltip-format": "Suspend the system",
+    "on-click": "systemctl suspend",
+    "tooltip": true
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": "{capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-full": " {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   }
-]
+}
