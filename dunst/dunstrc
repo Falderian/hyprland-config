@@ -9,12 +9,12 @@ progress_bar_height = 2
 progress_bar_frame_width = 1
 progress_bar_corner_radius = 2
 frame_width = 2
-frame_color = "#afaf87"
+frame_color = "#5E4A4E"  # Muted cherry gray border
 icon_corner_radius = 2
 transparency = 30
 horizontal_padding = 8
 gap_size = 4
-font = "JetBrains Mono 18"
+font = "JetBrains Mono 14"
 markup = full
 format = "<b>%s</b>\n%b"
 alignment = left
@@ -30,16 +30,19 @@ mouse_right_click = close_all
 per_monitor_dpi = false
 
 [urgency_low]
-background = "#282828"  # Gruvbox dark background
-foreground = "#afaf87"  # Gruvbox green (low urgency)
+background = "#2D2D2D"  # Dark gray background
+foreground = "#E8D5D5"  # Amber/gold for better readability
+frame_color = "#5E4A4E"  # Muted cherry gray border
 timeout = 3
 
 [urgency_normal]
-background = "#282828"  # Gruvbox dark background
-foreground = "#afaf87"  # Gruvbox light foreground
+background = "#303030"  # Slightly lighter gray background
+foreground = "#E8D5D5"  # Light pinkish-gray for high contrast
+frame_color = "#5E4A4E"  # Muted cherry gray border
 timeout = 3
 
 [urgency_critical]
-background = "#cc241d"  # Gruvbox red (critical)
-foreground = "#fbf1c7"  # Gruvbox light foreground
+background = "#383838"  # Even lighter gray for critical notifications
+foreground = "#FF5370"  # Vibrant cherry red for urgent messages
+frame_color = "#5E4A4E"  # Muted cherry gray border
 timeout = 3

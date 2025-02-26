@@ -1,19 +1,36 @@
-/* Define Colors */
+/* Material Dark Cherry Color Theme */
 @define-color transparent transparent;
-@define-color highlight-background #2d2d2d; /* Dark pastel muted gray */
-@define-color tooltip-text #e4e4e4; /* Light pastel gray */
-@define-color tooltip-background #1e1e1e; /* Dark pastel black */
-@define-color background #1e1e1e; /* Dark pastel background */
-@define-color primary-text #e4e4e4; /* Light pastel gray */
-@define-color focused-color #7fa2b4; /* Pastel blue */
-@define-color highlight-text #d78787; /* Pastel red */
-@define-color secondary-background #2a2a2a; /* Dark muted gray */
-@define-color inactive-color #5e5e5e; /* Muted pastel gray */
-@define-color occupied-color #d8af5f; /* Pastel yellow */
-@define-color hover-color #87afaf; /* Pastel teal */
-@define-color temperature-color #afaf87; /* Pastel green-gray */
-@define-color pulseaudio-color #d7af87; /* Pastel orange */
-@define-color cpu-color #af87af; /* Pastel purple */
-@define-color memory-color #87afaf; /* Pastel teal */
-@define-color tray-color #af87af; /* Pastel purple */
-@define-color network-color #7fa2b4; /* Pastel blue */
+@define-color highlight-background #45292F;
+/* Dark cherry highlight */
+@define-color tooltip-text #E8D5D5;
+/* Soft pinkish text */
+@define-color tooltip-background #2D1E22;
+/* Deep cherry background */
+@define-color background #251A1D;
+/* Base dark cherry color */
+@define-color primary-text #E8D5D5;
+/* Light pinkish-gray */
+@define-color focused-color #FF5370;
+/* Vibrant cherry red */
+@define-color highlight-text #FF8A80;
+/* Soft cherry highlight */
+@define-color secondary-background #3A282D;
+/* Muted cherry container */
+@define-color inactive-color #5E4A4E;
+/* Muted cherry gray */
+@define-color occupied-color #D4A657;
+/* Amber/gold for occupied */
+@define-color hover-color #D3869B;
+/* Soft cherry hover */
+@define-color temperature-color #FF5370;
+/* Red for temperature */
+@define-color pulseaudio-color #D3869B;
+/* Muted pink */
+@define-color cpu-color #C792EA;
+/* Soft purple */
+@define-color memory-color #89DDFF;
+/* Ice blue */
+@define-color tray-color #C792EA;
+/* Matching purple */
+@define-color network-color #82AAFF;
+/* Soft cornflower blue */

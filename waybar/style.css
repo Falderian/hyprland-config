@@ -69,7 +69,7 @@ tooltip {
   font-size: 32px;
   color: @primary-text;
   padding-left: 8px;
-  padding-right: 22px;
+  padding-right: 18px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -150,7 +150,7 @@ tooltip {
   background: @transparent;
   transition: all 0.3s;
   color: @pulseaudio-color;
-  
+
 }
 
 #custom-suspend:hover {
@@ -172,4 +172,3 @@ tooltip {
   margin-top: 6px;
   font-weight: 600;
 }
-
