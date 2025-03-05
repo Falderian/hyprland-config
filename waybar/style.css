@@ -2,8 +2,9 @@
 
 /* Universal Styles */
 * {
-  font-family: "Ubuntu Mono", monospace;
+  font-family: "Ubuntu Mono";
   font-size: 20px;
+  font-weight: 500;
   border-radius: 4px;
 }
 
