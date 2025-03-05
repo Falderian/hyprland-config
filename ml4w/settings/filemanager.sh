@@ -1,1 +1,1 @@
-dolphin
+kitty -e yazi

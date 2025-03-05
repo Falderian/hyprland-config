@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPO_PATH="$HOME/Projects/hyprland-config"
-CONFIG_ENTRIES=("dunst" "htop" "hypr" "kitty" "ml4w" "rofi" "waybar" "starship.toml")
+CONFIG_ENTRIES=("dunst" "htop" "hypr" "alacritty" "ml4w" "wofi" "waybar" "starship.toml" "gtk-3.0" "nwg-look" "/home/staselovich-n/.config/xsettingsd")
 
 echo "Syncing configurations to Git repository..."
 
