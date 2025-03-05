@@ -1,1 +1,1 @@
-alacritty -e yazi
+kitty -e yazi
