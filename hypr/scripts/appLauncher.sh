@@ -6,4 +6,4 @@ ENV_PATH="${HOME}/.config/hypr/scripts/env.sh"
 CONFIG="${HOME}/.config/wofi/config"
 
 # Launch Wofi with icons while keeping the GTK theme
-wofi --show=run -I --conf "${CONFIG}"
+wofi --show=drun -I --conf "${CONFIG}"
