@@ -5,7 +5,7 @@ ENV_PATH="${HOME}/.config/hypr/scripts/env.sh"
 
 options=" Poweroff\n Reboot\n Suspend\n Lock\n Logout"
 
-selected=$( echo -e $options | wofi --conf "${CONFIG}" --style "${STYLE}" -i --dmenu | awk '{print tolower($2)}' )
+selected=$( echo -e $options | wofi --show=drun -I --conf "${CONFIG}" -i --dmenu | awk '{print tolower($2)}' )
 
 case $selected in 
   poweroff)

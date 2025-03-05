@@ -1,12 +1,12 @@
 # ~/.config/alacritty/alacritty.toml
 
 [font]
-normal.family = "Iosevka"
+normal.family = "Ubuntu Mono"
 size = 16
 
 [window]
-padding.x = 15
-padding.y = 15
+padding.x = 20
+padding.y = 20
 opacity = 0.9
 
 [colors]
