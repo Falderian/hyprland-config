@@ -39,8 +39,7 @@
   "custom/appmenu": {
     "format": "",
     "tooltip-format": "Open Application Menu",
-    "on-click": "rofi -show drun",
-    "on-click-right": "rofi -show run",
+    "on-click": "~/.config/hypr/scripts/appLauncher.sh",
     "tooltip": true
   },
   "on-click": {

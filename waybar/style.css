@@ -3,7 +3,7 @@
 /* Universal Styles */
 * {
   font-family: "Ubuntu Mono";
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   border-radius: 4px;
 }
@@ -53,7 +53,6 @@ tooltip {
 }
 
 #mode:hover,
-#workspaces:hover,
 #temperature:hover,
 #pulseaudio:hover,
 #battery:hover,
