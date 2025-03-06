@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Define source and destination paths
-SRC_DIR="$HOME/.config"
-DEST_DIR="$HOME/config-backup"
-PKG_LIST=("dunst" "htop" "hyprland" "kitty" "ml4w" "wofi" "waybar" "starship" "gtk3" "nwg-look" "xsettingsd" "yazi")
+# Define repo path and config directories
+REPO_PATH="./"
+CONFIG_ENTRIES=("dunst" "htop" "hypr" "kitty" "ml4w" "wofi" "waybar" "starship.toml" "gtk-3.0" "nwg-look" "xsettingsd" "yazi")
+
+# Define required packages
+PKG_LIST=("dunst" "htop" "hyprland" "kitty" "wofi" "waybar" "starship" "gtk3" "nwg-look" "xsettingsd" "yazi")
 
 echo "Starting setup..."
 
@@ -18,13 +20,26 @@ if ! command -v yay &> /dev/null; then
   rm -rf /tmp/yay
 fi
 
-# Install required packages
+# Install required packages (with confirmation)
 echo "Installing required packages..."
-yay -S --needed "${PKG_LIST[@]}"
+yay -S --noconfirm --needed "${PKG_LIST[@]}"
 
-echo "Copying configuration files..."
-mkdir -p "$DEST_DIR"
-rsync -av --exclude="*cache*" --exclude="*tmp*" "$SRC_DIR/" "$DEST_DIR/"
+# Copy config files from the repo to ~/.config/
+echo "Restoring configuration files from $REPO_PATH to ~/.config/"
 
-echo "Setup complete. All packages installed and configurations backed up to $DEST_DIR."
+for entry in "${CONFIG_ENTRIES[@]}"; do
+  SRC_PATH="$REPO_PATH/$entry"
+  DEST_PATH="$HOME/.config/$entry"
 
+  if [[ -d "$SRC_PATH" ]]; then
+    mkdir -p "$DEST_PATH"
+    rsync -a --delete "$SRC_PATH/" "$DEST_PATH/"
+  elif [[ -f "$SRC_PATH" ]]; then
+    mkdir -p "$(dirname "$DEST_PATH")"
+    rsync -a "$SRC_PATH" "$DEST_PATH"
+  fi
+done
+
+echo "All configuration files restored successfully."
+
+echo "Setup complete!"
