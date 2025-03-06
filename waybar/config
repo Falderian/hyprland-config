@@ -6,7 +6,8 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "mpris"
+    "mpris",
+    "pulseaudio/slider"
   ],
   "modules-right": [
     "network",
@@ -42,17 +43,6 @@
     "on-click": "~/.config/hypr/scripts/appLauncher.sh",
     "tooltip": true
   },
-  "on-click": {
-    "custom/appmenu": "rofi -show drun",
-    "clock": "gnome-calendar",
-    "network": "nm-connection-editor",
-    "tray": "toggle_tray"
-  },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "horizontal"
-  },
   "tray": {
     "spacing": 10
   },
@@ -67,15 +57,6 @@
   },
   "memory": {
     "format": "{}%  "
-  },
-  "temperature": {
-    "critical-threshold": 80,
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      " ",
-      " ",
-      " "
-    ]
   },
   "network": {
     "interface": "*",
@@ -127,26 +108,6 @@
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
     "on-bluetooth-connect": "notify-send 'Bluetooth Audio' 'Connected to {desc}'",
     "on-bluetooth-disconnect": "notify-send 'Bluetooth Audio' 'Disconnected from {desc}'"
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
   },
   "mpris": {
     "player": "spotify",
