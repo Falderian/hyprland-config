@@ -7,7 +7,6 @@
   ],
   "modules-center": [
     "mpris",
-    "pulseaudio/slider"
   ],
   "modules-right": [
     "network",
@@ -72,10 +71,10 @@
     "max-length": 50
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}   {volume}%",
-    "format-bluetooth-muted": "   {volume}%",
-    "format-muted": "  {icon}",
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} ",
+    "format-bluetooth-muted": "{volume}%  ",
+    "format-muted": "{icon} ",
     "format-icons": {
       "headphone": "󰋋",
       "hands-free": "󱖡",
@@ -118,9 +117,8 @@
     "max-length": 40,
     "hide-on-empty": true,
     "status-icons": {
-      "playing": "▶",
-      "paused": "⏸",
-      "stopped": "⏹"
+      "playing": "󰐍",
+      "paused": "󰏤"
     }
   },
   "hyprland/window": {
