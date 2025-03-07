@@ -6,7 +6,7 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "mpris",
+    "mpris"
   ],
   "modules-right": [
     "network",
@@ -58,17 +58,16 @@
     "format": "{}%  "
   },
   "network": {
-    "interface": "*",
-    "interval": 2,
-    "format": "{bandwidthDownBits} ",
-    "format-wifi": "{bandwidthDownBits} ",
-    "format-ethernet": "{bandwidthDownBits} ",
-    "format-disconnected": "Disconnected",
-    "tooltip-format": "{ifname}\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-    "tooltip-format-ethernet": "{ifname} ({ipaddr}/{cidr})\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-    "tooltip-format-disconnected": "No active network connection",
-    "max-length": 50
+    "format": "{ifname}",
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": "  {ifname}",
+    "format-disconnected": "⚠  Disconnected",
+    "format-linked": "  {ifname} (No IP)",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-alt-click": "click-middle",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}\nUp: {bandwidthUpBits}  Down: {bandwidthDownBits}",
+    "interval": 1,
+    "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
