@@ -1,36 +1,19 @@
-/* Material Dark Cherry Color Theme */
+/* Nord Frost & Aurora Fusion */
 @define-color transparent transparent;
-@define-color highlight-background #45292F;
-/* Dark cherry highlight */
-@define-color tooltip-text #E8D5D5;
-/* Soft pinkish text */
-@define-color tooltip-background #2D1E22;
-/* Deep cherry background */
-@define-color background #251A1D;
-/* Base dark cherry color */
-@define-color primary-text #E8D5D5;
-/* Light pinkish-gray */
-@define-color focused-color #FF5370;
-/* Vibrant cherry red */
-@define-color highlight-text #FF8A80;
-/* Soft cherry highlight */
-@define-color secondary-background #3A282D;
-/* Muted cherry container */
-@define-color inactive-color #5E4A4E;
-/* Muted cherry gray */
-@define-color occupied-color #D4A657;
-/* Amber/gold for occupied */
-@define-color hover-color #D3869B;
-/* Soft cherry hover */
-@define-color temperature-color #FF5370;
-/* Red for temperature */
-@define-color pulseaudio-color #D3869B;
-/* Muted pink */
-@define-color cpu-color #C792EA;
-/* Soft purple */
-@define-color memory-color #89DDFF;
-/* Ice blue */
-@define-color tray-color #C792EA;
-/* Matching purple */
-@define-color network-color #82AAFF;
-/* Soft cornflower blue */
+@define-color highlight-background #3B4252;    /* nord1 (Dark slate) */
+@define-color tooltip-text #D8DEE9;            /* nord4 (Arctic dawn) */
+@define-color tooltip-background #2E3440;      /* nord0 (Night ocean) */
+@define-color background #2E3440;              /* nord0 (Deep navy) */
+@define-color primary-text #D8DEE9;            /* nord4 (Snow storm) */
+@define-color focused-color #B48EAD;           /* nord15 (Pale purple) */
+@define-color highlight-text #8FBCBB;          /* nord7 (Frost teal) */
+@define-color secondary-background #3B4252;    /* nord1 (Slate gray) */
+@define-color inactive-color #4C566A;          /* nord3 (Stormy blue) */
+@define-color occupied-color #EBCB8B;          /* nord13 (Northern gold) */
+@define-color hover-color #D08770;             /* nord12 (Autumn orange) */
+@define-color temperature-color #D08770;       /* nord12 (Autumn orange) - formerly Aurora red */
+@define-color pulseaudio-color #88C0D0;        /* nord8 (Glacier blue) */
+@define-color cpu-color #81A1C1;               /* nord9 (Fjord blue) */
+@define-color memory-color #A3BE8C;            /* nord14 (Pine green) */
+@define-color tray-color #5E81AC;              /* nord10 (Deep azure) */
+@define-color network-color #8FBCBB;           /* nord7 (Frost teal) */
