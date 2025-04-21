@@ -6,7 +6,7 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "mpris",
+    "mpris"
   ],
   "modules-right": [
     "network",
@@ -15,30 +15,40 @@
     "pulseaudio",
     "clock",
     "tray",
-    "custom/suspend"
+    "custom/notification"
   ],
   "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "1Q": "1 ",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "urgent": " ",
-      "focused": " "
+      "urgent": "",
+      "focused": ""
     }
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
   "custom/appmenu": {
     "format": "",
-    "tooltip-format": "Open Application Menu",
+    "tooltip-format": "Открыть меню приложений",
     "on-click": "~/.config/hypr/scripts/appLauncher.sh",
     "tooltip": true
   },
@@ -51,24 +61,23 @@
     "format-alt": "{:%A, %B %d, %Y}  󰃭"
   },
   "cpu": {
-    "format": "{usage}%  ",
-    "tooltip": false
+    "format": "{usage}% ",
+    "tooltip": false,
+    "on-click": "foot -e htop"
   },
   "memory": {
-    "format": "{}%  "
+    "format": "{:>3}% ",
+    "on-click": "foot -e htop"
   },
   "network": {
-    "interface": "*",
-    "interval": 2,
-    "format": "{bandwidthDownBits} ",
-    "format-wifi": "{bandwidthDownBits} ",
-    "format-ethernet": "{bandwidthDownBits} ",
-    "format-disconnected": "Disconnected",
-    "tooltip-format": "{ifname}\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-    "tooltip-format-ethernet": "{ifname} ({ipaddr}/{cidr})\nDownload: {bandwidthDownBits} bps\nUpload: {bandwidthUpBits} bps",
-    "tooltip-format-disconnected": "No active network connection",
-    "max-length": 50
+    "format-disabled": " Отключён",
+    "format-wifi": "{bandwidthDownBits:>} 󰶡",
+    "tooltip-format-wifi": "{essid}",
+    "format-ethernet": "{bandwidthDownBits:>} 󰶡",
+    "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": " Нет сети",
+    "on-click": " nmtui",
+    "interval": 2
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -105,30 +114,29 @@
     "on-click-middle": "pavucontrol",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-    "on-bluetooth-connect": "notify-send 'Bluetooth Audio' 'Connected to {desc}'",
-    "on-bluetooth-disconnect": "notify-send 'Bluetooth Audio' 'Disconnected from {desc}'"
+    "on-bluetooth-connect": "notify-send 'Bluetooth Audio' 'Подключено к {desc}'",
+    "on-bluetooth-disconnect": "notify-send 'Bluetooth Audio' 'Отключено от {desc}'"
   },
   "mpris": {
-    "player": "spotify",
-    "format": "{status_icon} {artist} - {title}",
-    "tooltip-format": "<-M/R->",
+    "format": "{player_icon} {status_icon} {dynamic}",
+    "format-paused": "{player_icon} 󰏤 {dynamic}",
+    "player-icons": {
+      "spotify": "",
+      "firefox": "",
+      "default": "󰎈"
+    },
+    "status-icons": {
+      "playing": "󰐊",
+      "paused": "󰏤"
+    },
+    "dynamic-order": [
+      "artist",
+      "title"
+    ],
+    "tooltip-format": "{player}: {artist} - {title}",
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
-    "max-length": 40,
-    "hide-on-empty": true,
-    "status-icons": {
-      "playing": "󰐍",
-      "paused": "󰏤"
-    }
-  },
-  "hyprland/window": {
-    "max-length": 50
-  },
-  "custom/suspend": {
-    "format": "",
-    "tooltip-format": "Suspend the system",
-    "on-click": "systemctl suspend",
-    "tooltip": true
+    "on-click-middle": "playerctl previous"
   },
   "battery": {
     "states": {
@@ -136,7 +144,7 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}%  ",
+    "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{icon} {time}",
     "format-full": "{capacity}% ",

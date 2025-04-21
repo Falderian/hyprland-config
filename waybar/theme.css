@@ -1,36 +1,18 @@
-/* Material Dark Cherry Color Theme */
 @define-color transparent transparent;
-@define-color highlight-background #45292F;
-/* Dark cherry highlight */
-@define-color tooltip-text #E8D5D5;
-/* Soft pinkish text */
-@define-color tooltip-background #2D1E22;
-/* Deep cherry background */
-@define-color background #251A1D;
-/* Base dark cherry color */
-@define-color primary-text #E8D5D5;
-/* Light pinkish-gray */
-@define-color focused-color #FF5370;
-/* Vibrant cherry red */
-@define-color highlight-text #FF8A80;
-/* Soft cherry highlight */
-@define-color secondary-background #3A282D;
-/* Muted cherry container */
-@define-color inactive-color #5E4A4E;
-/* Muted cherry gray */
-@define-color occupied-color #D4A657;
-/* Amber/gold for occupied */
-@define-color hover-color #D3869B;
-/* Soft cherry hover */
-@define-color temperature-color #FF5370;
-/* Red for temperature */
-@define-color pulseaudio-color #D3869B;
-/* Muted pink */
-@define-color cpu-color #C792EA;
-/* Soft purple */
-@define-color memory-color #89DDFF;
-/* Ice blue */
-@define-color tray-color #C792EA;
-/* Matching purple */
-@define-color network-color #82AAFF;
-/* Soft cornflower blue */
+@define-color highlight-background #3B4252; /* Polar Night (dark background) */
+@define-color tooltip-text #ECEFF4; /* Snow Storm (light text) */
+@define-color tooltip-background #434C5E; /* Polar Night (slightly lighter bg) */
+@define-color background #2E3440; /* Polar Night */
+@define-color primary-text #D8DEE9; /* Snow Storm */
+@define-color focused-color #BF616A; /* Aurora Red */
+@define-color highlight-text #EBCB8B; /* Aurora Yellow */
+@define-color secondary-background #4C566A; /* Polar Night (alternative bg) */
+@define-color inactive-color #616E88; /* Desaturated blue-gray */
+@define-color occupied-color #A3BE8C; /* Aurora Green */
+@define-color hover-color #B48EAD; /* Aurora Purple */
+@define-color temperature-color #BF616A; /* Aurora Red */
+@define-color pulseaudio-color #B48EAD; /* Aurora Purple */
+@define-color cpu-color #D08770; /* Aurora Orange */
+@define-color memory-color #88C0D0; /* Frost Cyan */
+@define-color tray-color #5E81AC; /* Frost Blue */
+@define-color network-color #81A1C1; /* Frost Blue (lighter) */

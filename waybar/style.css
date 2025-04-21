@@ -1,20 +1,11 @@
-@import url('./theme.css');
+@import url("./theme.css");
 
 /* Universal Styles */
 * {
-  font-family: "Ubuntu Mono";
-  font-size: 16px;
-  font-weight: 500;
+  font-family: "FiraCode Nerd Font";
+  font-size: 14px;
+  font-weight: 400;
   border-radius: 4px;
-}
-
-/* Waybar Window */
-window#waybar {
-  background: @transparent;
-}
-
-window#waybar.hidden {
-  opacity: 0.2;
 }
 
 /* Tooltip Styles */
@@ -28,8 +19,8 @@ tooltip {
   margin: 0 10px;
 }
 
-#window {
-  background: @background;
+window#waybar {
+  background: @transparent;
 }
 
 /* Modules */
@@ -46,10 +37,17 @@ tooltip {
 #battery,
 #mpris {
   color: @primary-text;
-  padding: 0 12px;
+  padding: 0 8px;
   margin-left: 8px;
-  border-radius: 8px;
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
   transition: 0.5s all;
+}
+
+#network,
+#memory {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 #mode:hover,
@@ -62,8 +60,8 @@ tooltip {
 #network:hover,
 #clock:hover,
 #mpris:hover,
-#custom-suspend:hover {
-  background: @highlight-background;
+#custom-notification:hover {
+  border-bottom: 1px solid @hover-text;
   color: @hover-text;
 }
 
@@ -72,7 +70,7 @@ tooltip {
   color: @primary-text;
   padding-left: 8px;
   padding-right: 18px;
-  transition: background 0.3s, color 0.3s;
+  transition: all 0.5s;
 }
 
 #custom-appmenu:hover {
@@ -86,6 +84,7 @@ tooltip {
   color: @inactive-color;
   padding: 0 5px;
   border-radius: 0;
+  transition: all 0.5s;
 }
 
 #workspaces button.occupied {
@@ -141,17 +140,16 @@ tooltip {
   transition: color 0.3s;
 }
 
-#custom-suspend {
+#custom-notification {
   color: @primary-text;
-  padding-right: 20px;
-  padding-left: 10px;  
+  padding-right: 15px;
+  padding-left: 10px;
   font-size: 18px;
   background: @transparent;
   transition: all 0.3s;
+  border-radius: 0;
   color: @pulseaudio-color;
-  border-radius: 8px;
 }
-
 
 /* Layout */
 .modules-left {

@@ -1,1 +1,1 @@
-kitty -e yazi
+foot -e yazi

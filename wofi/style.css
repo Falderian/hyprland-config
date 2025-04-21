@@ -1,16 +1,74 @@
-* {
-  font-family: Ubuntu Mono;
+window {
+  background-color: rgba(46, 52, 64, 0.98); /* or var(--nord0) */
+  border: 1px solid rgba(136, 192, 208, 0.15); /* subtle frost accent */
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
-#window {
-  border: 1px solid rgb(60, 0, 0);
-  background-color: #1e1e1e;
+#input {
+  margin: 5px 10px;
+  padding: 12px;
+  background-color: rgba(59, 66, 82, 0.9); /* var(--nord1) */
+  color: var(--nord6);
+  border-radius: 10px;
+  font-size: 15px;
+  border: 1px solid var(--nord10); /* aurora blue accent */
 }
 
-#outer-box {
-  padding: 5px;
+#entry {
+  padding: 12px;
+  margin: 5px 10px;
+  color: var(--nord4);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  background-color: transparent;
+  border-radius: 0px 20px;
+}
+
+#entry:hover {
+  border-left-color: var(--nord8); /* frost highlight */
+}
+
+#entry:selected {
+  background: linear-gradient(
+    to left,
+    rgba(94, 129, 172, 0.9) 10%,
+    /* var(--nord10) */ #8b3c47 100% /* var(--nord11) */
+  );
+  border-radius: 0px 20px;
 }
 
 #text {
-  padding-left: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  margin-left: 8px;
+  background: transparent;
+  color: var(--nord4);
+}
+
+#entry image {
+  background: transparent;
+}
+
+#scroll trough {
+  background: rgba(76, 86, 106, 0.3); /* mix of nord2 & nord3 */
+}
+#scroll slider {
+  background: var(--nord10); /* aurora blue */
+}
+
+/* Additional Aurora accents for interactive elements */
+button,
+.link {
+  color: var(--nord13); /* aurora yellow text */
+  background-color: transparent;
+  border: 1px solid var(--nord13);
+  border-radius: 4px;
+  padding: 4px 8px;
+  transition: background 0.2s;
+}
+button:hover,
+.link:hover {
+  background-color: var(--nord13);
+  color: var(--nord1);
 }

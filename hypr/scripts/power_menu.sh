@@ -3,20 +3,19 @@
 ENV_PATH="${HOME}/.config/hypr/scripts/env.sh"
 . $ENV_PATH
 
-options=" Poweroff\n Reboot\n Suspend\n Lock\n Logout"
+options="   Poweroff\n   Reboot\n   Suspend\n   Lock\n   Logout"
 
-selected=$( echo -e $options | wofi --show=drun -I --conf "${CONFIG}" -i --dmenu | awk '{print tolower($2)}' )
+selected=$(echo -e "$options" | wofi --show=drun -I --conf "${CONFIG}" -i --dmenu | awk '{print tolower($2)}')
 
-case $selected in 
+case $selected in
   poweroff)
-    exec systemctl $selected -i;;
+    exec systemctl poweroff -i;;
   reboot)
-    exec systemctl $selected;;
+    exec systemctl reboot;;
   suspend)
-    exec systemctl $selected;;
+    exec systemctl suspend;;
   lock)
     hyprlock;;
   logout)
     hyprctl dispatch exit;;
 esac
-

@@ -1,5 +1,10 @@
-show-icons=true
-drun-use-desktop-cache=true
 width=500
 height=400
 lines=6
+show_icons=true
+drun_use_desktop_cache=true
+location=center
+hide_scroll=true
+columns=1
+prompt=❄️
+insensitive=true
