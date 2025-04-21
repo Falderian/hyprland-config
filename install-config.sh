@@ -2,10 +2,10 @@
 
 # Define repo path and config directories
 REPO_PATH="./"
-CONFIG_ENTRIES=("dunst" "htop" "hypr" "kitty" "ml4w" "wofi" "waybar" "starship.toml" "gtk-3.0" "nwg-look" "xsettingsd" "yazi")
+CONFIG_ENTRIES=("swaync" "htop" "hypr" "foot" "ml4w" "wofi" "waybar" "starship.toml" "gtk-3.0" "nwg-look" "xsettingsd" "yazi")
 
 # Define required packages
-PKG_LIST=("dunst" "htop" "hyprland" "kitty" "wofi" "waybar" "starship" "gtk3" "nwg-look" "xsettingsd" "yazi")
+PKG_LIST=("swaync" "htop" "hyprland" "foot" "wofi" "waybar" "starship" "gtk3" "nwg-look" "xsettingsd" "yazi")
 
 echo "Starting setup..."
 
