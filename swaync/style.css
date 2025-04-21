@@ -1,0 +1,63 @@
+/* Update color definitions */
+@define-color cc-bg #2E3440; /* nord0 */
+@define-color noti-border-color #4C566A; /* nord3 */
+@define-color noti-bg #3B4252; /* nord1 */
+@define-color noti-bg-darker #434C5E; /* nord2 */
+@define-color noti-bg-hover #4C566A; /* nord3 */
+@define-color noti-bg-focus #3B4252; /* nord1 with opacity */
+@define-color noti-close-bg #4C566A; /* nord3 */
+@define-color noti-close-bg-hover #BF616A; /* nord11 */
+@define-color text-color #D8DEE9; /* nord4 */
+@define-color text-color-disabled #4C566A; /* nord3 */
+@define-color bg-selected #5E81AC; /* nord10 */
+
+/* Update specific elements */
+.notification {
+  border: 1px solid #5e81ac; /* nord10 */
+}
+
+.close-button {
+  background: #bf616a; /* nord11 */
+}
+
+.notification-action:hover,
+.notification-default-action:hover {
+  color: #81a1c1; /* nord9 */
+}
+
+.summary {
+  color: #a3be8c; /* nord14 */
+}
+
+.widget-title {
+  color: #81a1c1; /* nord9 */
+}
+
+.widget-title > button:hover {
+  background: #bf616a; /* nord11 */
+}
+
+.widget-dnd {
+  color: #81a1c1; /* nord9 */
+}
+
+.widget-dnd > switch {
+  background: #81a1c1; /* nord9 */
+}
+
+.widget-dnd > switch:checked {
+  background: #bf616a; /* nord11 */
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: #81a1c1; /* nord9 */
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:checked {
+  background: #a3be8c; /* nord14 */
+}
+
+.widget-volume,
+.widget-backlight {
+  color: #81a1c1; /* nord9 */
+}
