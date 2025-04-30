@@ -8,12 +8,12 @@
 @define-color transparent transparent;
 @define-color highlight-background #3B4252; /* Polar Night (dark background) */
 @define-color tooltip-text #ECEFF4; /* Snow Storm (light text) */
-@define-color tooltip-background #434C5E; /* Polar Night (slightly lighter bg) */
-@define-color background #2E3440; /* Polar Night */
+@define-color tooltip-background #2e3440; /* Polar Night (slightly lighter bg) */
+@define-color background #242424; /* Polar Night */
 @define-color primary-text #D8DEE9; /* Snow Storm */
 @define-color focused-color #BF616A; /* Aurora Red */
 @define-color highlight-text #EBCB8B; /* Aurora Yellow */
-@define-color secondary-background #4C566A; /* Polar Night (alternative bg) */
+@define-color secondary-background #2e3440; /* Polar Night (alternative bg) */
 @define-color inactive-color #616E88; /* Desaturated blue-gray */
 @define-color occupied-color #A3BE8C; /* Aurora Green */
 @define-color hover-color #B48EAD; /* Aurora Purple */

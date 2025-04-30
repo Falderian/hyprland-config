@@ -1,1 +1,1 @@
-foot -e yazi
+thunar

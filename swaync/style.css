@@ -1,63 +1,307 @@
-/* Update color definitions */
-@define-color cc-bg #2E3440; /* nord0 */
-@define-color noti-border-color #4C566A; /* nord3 */
-@define-color noti-bg #3B4252; /* nord1 */
-@define-color noti-bg-darker #434C5E; /* nord2 */
-@define-color noti-bg-hover #4C566A; /* nord3 */
-@define-color noti-bg-focus #3B4252; /* nord1 with opacity */
-@define-color noti-close-bg #4C566A; /* nord3 */
-@define-color noti-close-bg-hover #BF616A; /* nord11 */
-@define-color text-color #D8DEE9; /* nord4 */
-@define-color text-color-disabled #4C566A; /* nord3 */
-@define-color bg-selected #5E81AC; /* nord10 */
+@import url("./theme.css");
 
-/* Update specific elements */
-.notification {
-  border: 1px solid #5e81ac; /* nord10 */
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
 }
 
-.close-button {
-  background: #bf616a; /* nord11 */
+.floating-notifications.background .notification-row {
+  padding: 0.25rem;
 }
 
-.notification-action:hover,
-.notification-default-action:hover {
-  color: #81a1c1; /* nord9 */
+.floating-notifications.background .notification-row .notification-background {
+  border-radius: 4px;
+  background-color: @tooltip-background;
+  color: @tooltip-text;
+  border: 1px solid @network-color;
 }
 
-.summary {
-  color: #a3be8c; /* nord14 */
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification {
+  padding: 0.25rem;
 }
 
-.widget-title {
-  color: #81a1c1; /* nord9 */
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 1px solid @focused-color;
 }
 
-.widget-title > button:hover {
-  background: #bf616a; /* nord11 */
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .summary {
+  margin: 0.25rem;
+  color: @primary-text;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .body {
+  margin: 0.25rem;
+  color: @inactive-color;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 1rem;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  color: @primary-text;
+  background-color: @secondary-background;
+  border: 1px solid @primary-text;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: @highlight-background;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @primary-text;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button {
+  margin: 0.25rem;
+  padding: 0.25rem;
+  color: @primary-text;
+  background-color: @focused-color;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:hover {
+  color: @background;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: @hover-color;
+}
+
+.control-center {
+  margin: 1rem;
+  background-color: @background;
+  color: @primary-text;
+  padding: 1rem;
+  border: 2px solid @network-color;
+}
+
+.control-center .widget-title {
+  color: @primary-text;
+}
+
+.control-center .widget-title button {
+  color: @primary-text;
+  border: 1px solid @transparent;
+  padding: 0.2rem;
+}
+
+.control-center .widget-title button:hover {
+  color: @memory-color;
+}
+
+.control-center .widget-title button:active {
+  color: @memory-color;
+}
+
+.control-center .notification-row .notification-background {
+  margin: 0.5em;
+  background-color: @secondary-background;
+  color: @primary-text;
+  border: 1px solid @primary-text;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 1px solid @focused-color;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  padding: 0.25rem;
+  color: @primary-text;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .summary {
+  margin: 0.5rem;
+  color: @primary-text;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .body {
+  margin: 0.5rem;
+  color: @inactive-color;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  color: @primary-text;
+  background-color: @secondary-background;
+  border: 1px solid @primary-text;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: @highlight-background;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @primary-text;
+}
+
+.control-center .notification-row .notification-background .close-button {
+  margin: 0.25rem;
+  padding: 0.25rem;
+  color: @primary-text;
+  background-color: @focused-color;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  color: @background;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: @hover-color;
+}
+
+progressbar,
+progress,
+trough {
+  border-radius: 4px;
+}
+
+.notification.critical progress {
+  background-color: @focused-color;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @memory-color;
+}
+
+trough {
+  background-color: @secondary-background;
+}
+
+.control-center trough {
+  background-color: @primary-text;
+}
+
+.control-center-dnd {
+  margin: 1rem 0;
+}
+
+.control-center-dnd slider {
+  background: @secondary-background;
 }
 
 .widget-dnd {
-  color: #81a1c1; /* nord9 */
+  color: @inactive-color;
 }
 
 .widget-dnd > switch {
-  background: #81a1c1; /* nord9 */
+  background: @secondary-background;
+  border: 1px solid @primary-text;
 }
 
-.widget-dnd > switch:checked {
-  background: #bf616a; /* nord11 */
+.widget-dnd > switch:checked slider {
+  background: @pulseaudio-color;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: #81a1c1; /* nord9 */
+.widget-dnd > switch slider {
+  background: @primary-text;
+  margin: 0.25rem;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:checked {
-  background: #a3be8c; /* nord14 */
+.widget-mpris {
+  color: @primary-text;
 }
 
-.widget-volume,
-.widget-backlight {
-  color: #81a1c1; /* nord9 */
+.widget-mpris-player {
+  padding: 8px;
+  margin: 8px;
+  color: @primary-text;
+  background: @background;
+}
+
+.widget-mpris-title {
+  color: @primary-text;
+}
+
+.widget-mpris-subtitle {
+  color: @primary-text;
 }

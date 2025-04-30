@@ -1,6 +1,6 @@
 window {
-  background-color: rgba(46, 52, 64, 0.98); /* or var(--nord0) */
-  border: 1px solid rgba(136, 192, 208, 0.15); /* subtle frost accent */
+  background-color: rgba(36, 36, 36, 0.95); /* or var(--nord0) */
+  border: 2px solid rgba(136, 192, 208, 0.15); /* subtle frost accent */
   border-radius: 10px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
@@ -8,7 +8,11 @@ window {
 #input {
   margin: 5px 10px;
   padding: 12px;
-  background-color: rgba(59, 66, 82, 0.9); /* var(--nord1) */
+  background: linear-gradient(
+    to left,
+    rgba(36, 36, 36, 0.8) 10%,
+    /* var(--nord10) */ #2e3440 100% /* var(--nord11) */
+  );
   color: var(--nord6);
   border-radius: 10px;
   font-size: 15px;
@@ -22,7 +26,7 @@ window {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   background-color: transparent;
-  border-radius: 0px 20px;
+  border-radius: 10px;
 }
 
 #entry:hover {
@@ -32,10 +36,10 @@ window {
 #entry:selected {
   background: linear-gradient(
     to left,
-    rgba(94, 129, 172, 0.9) 10%,
-    /* var(--nord10) */ #8b3c47 100% /* var(--nord11) */
+    rgba(36, 36, 36, 0.8) 10%,
+    /* var(--nord10) */ rgb(94, 129, 172) 100% /* var(--nord11) */
   );
-  border-radius: 0px 20px;
+  border-radius: 10px;
 }
 
 #text {
