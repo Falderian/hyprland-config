@@ -1,1 +1,1 @@
-thunar
+kitty -e yazi

@@ -1,9 +1,19 @@
 #!/usr/bin/env bash
 
-ENV_PATH="${HOME}/.config/hypr/scripts/env.sh"
-. $ENV_PATH
+## Author : Aditya Shakya (adi1090x)
+## Github : @adi1090x
+#
+## Rofi   : Launcher (Modi Drun, Run, File Browser, Window)
+#
+## Available Styles
+#
+## style-1     style-2     style-3     style-4     style-5
+## style-6     style-7     style-8     style-9     style-10
 
-CONFIG="${HOME}/.config/wofi/config"
+dir="$HOME/.config/rofi/launchers/type-6"
+theme='style-5'
 
-# Launch Wofi with icons while keeping the GTK theme
-wofi --show=drun -I --conf "${CONFIG}"
+## Run
+rofi \
+    -show drun \
+    -theme ${dir}/${theme}.rasi

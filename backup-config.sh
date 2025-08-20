@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-REPO_PATH="$HOME/Projects/hyprland-config"
-CONFIG_ENTRIES=("swaync" "htop" "hypr" "foot" "ml4w" "wofi" "waybar" "starship.toml" "nwg-look" "xsettingsd")
+REPO_PATH="$HOME/Templates/hyprland-config"
+CONFIG_ENTRIES=("swaync" "hyprlock" "hypr" "kitty" "ml4w" "rofi" "waybar" "starship.toml" "swaync")
 
 echo "Syncing configurations to Git repository..."
 

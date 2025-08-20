@@ -46,8 +46,8 @@
     "escape": true
   },
   "custom/appmenu": {
-    "format": "",  // Arch logo (unchanged, already in Nerd Font)
-    "tooltip-format": "Открыть меню приложений",
+    "format": "⌕",  // NixOS-like hexagon symbol
+    "tooltip-format": "Applications",
     "on-click": "~/.config/hypr/scripts/appLauncher.sh",
     "tooltip": true
   },
@@ -61,7 +61,7 @@
   },
   "memory": {
     "format": "{:>3}% ",  // RAM chip icon (was )
-    "on-click": "foot htop"
+    "on-click": "kitty -e btop"
   },
   "network": {
     "format-disabled": " Отключён",
@@ -70,44 +70,11 @@
     "format-ethernet": "{bandwidthDownBits:>} ",  // Ethernet icon (was 󰶡)
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Нет сети",
-    "on-click": "foot -e nmtui",
+    "on-click": "kitty -e nmtui",
     "interval": 2
   },
-  "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon} ",
-    "format-bluetooth-muted": "{volume}%  ",
-    "format-muted": "{icon} ",
-    "format-icons": {
-      "headphone": "",       
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",  // High volume
-        "",  // Medium volume
-        ""   // Low volume
-      ]
-    },
-    "bluetooth-format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "tooltip-format": "{desc}, {volume}%",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-middle": "pavucontrol",
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-    "on-bluetooth-connect": "notify-send 'Bluetooth Audio' 'Подключено к {desc}'",
-    "on-bluetooth-disconnect": "notify-send 'Bluetooth Audio' 'Отключено от {desc}'"
+  "pipewire": {
+    "format": "{volume}% \uf028"
   },
   "battery": {
     "states": {
