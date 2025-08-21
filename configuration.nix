@@ -172,14 +172,19 @@
   ];
 
   hardware.bluetooth = {
- 	enable = true;
-	powerOnBoot = true;
-  	settings = {
-  		General = {
-  			Experimental = true; # Show battery charge of Bluetooth devices
-	    	};
+    enable = true;
+	  powerOnBoot = true;
+    settings = {
+      General = {
+    	  Experimental = true; # Show battery charge of Bluetooth devices
+	    };
 	  };
   };
+
+  environment.etc."nanorc".text = ''
+    set tabsize 2
+    set tabstospaces
+  '';
 
 # programs.vscode = {
 #    enable = true;
