@@ -18,6 +18,8 @@ for entry in "${CONFIG_ENTRIES[@]}"; do
   fi
 done
 
+cp /etc/nixos/configuration.nix .
+
 cd "$REPO_PATH" || { echo "Error: Unable to access $REPO_PATH"; exit 1; }
 
 git add .
