@@ -14,7 +14,6 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.systemd-boot.configurationLimit = 5;
-  
   #boot.loader = {
   #  efi = {
   #    canTouchEfiVariables = true;
@@ -55,7 +54,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+#  services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
 #  services.xserver.displayManager.gdm.enable = true;
@@ -64,13 +63,13 @@
   services = {
 #    desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
-#    displayManager.sddm.wayland.enable = true;
+    displayManager.sddm.wayland.enable = true;
   };
 
   # Configure keymap in X11
  services.xserver.xkb = {
    layout = "us";
-    variant = "";
+   variant = "";
   };
 
   # Enable sound with pipewire.
@@ -109,6 +108,7 @@
   wineWowPackages.waylandFull
   winetricks
 	google-chrome
+  vscodium  
 	
 	# hyprland
 	alacritty
@@ -121,7 +121,6 @@
 	swaynotificationcenter
 	starship
 	btop-rocm
-	nwg-look
 	yazi
 	capitaine-cursors
 	rofi-wayland
@@ -131,6 +130,9 @@
 	marwaita-red
   zafiro-icons
 	home-manager
+  bash-completion
+  copyq
+  nwg-look
     ];
   };
 
@@ -143,7 +145,7 @@
   };
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
-
+  programs.starship.enable = true;
 
 
   # Enable automatic login for the user.
@@ -187,8 +189,13 @@
   '';
 
   fonts.packages = with pkgs; [
-    nerd-fonts.symbols-only
+    nerd-fonts.fira-code
   ];
+  
+  programs.bash.shellAliases = {
+    start-vpn="openvpn3 session-start --config ~/Projects/Synchrony/client.ovpn";
+    start-synchrony="(cd ~/Projects/Synchrony/ui && npm run start:standalone) & (cd ~/Projects/Synchrony/IMS/Pharo11_dev && pharo --headless smt-base.image --script ../resources_project/SMT/scripts/start-analytics-server.st -- workspace=IMS) & wait";
+  };
 
 # programs.vscode = {
 #    enable = true;
