@@ -16,7 +16,7 @@
 @define-color secondary-background #4C566A; /* Polar Night (alternative bg) */
 @define-color inactive-color #616E88; /* Desaturated blue-gray */
 @define-color occupied-color #A3BE8C; /* Aurora Green */
-@define-color hover-color #B48EAD; /* Aurora Purple */
+@define-color hover-color #BF616A; /* Aurora Purple */
 @define-color temperature-color #BF616A; /* Aurora Red */
 @define-color pulseaudio-color #B48EAD; /* Aurora Purple */
 @define-color cpu-color #D08770; /* Aurora Orange */

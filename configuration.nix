@@ -131,7 +131,7 @@
   zafiro-icons
 	home-manager
   bash-completion
-  copyq
+  wl-clip-persist
   nwg-look
     ];
   };
