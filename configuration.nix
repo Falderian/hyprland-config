@@ -8,26 +8,26 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <nixos-hardware/common/gpu/amd/default.nix>
     ];
 
-  # Bootloader.
-    boot.loader.systemd-boot.enable = false;
-#   boot.loader.efi.canTouchEfiVariables = true;
-#   boot.loader.systemd-boot.configurationLimit = 5;
+    # Bootloader.
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.systemd-boot.configurationLimit = 5;
   
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-    };
-    grub = {
-       enable = true;
-       useOSProber = true;
-       efiSupport = true;
-       device = "nodev";
-       configurationLimit = 5;
-    };
-  };
+  #boot.loader = {
+  #  efi = {
+  #    canTouchEfiVariables = true;
+  #  };
+  #  grub = {
+  #     enable = true;
+  #     useOSProber = true;
+  #     efiSupport = true;
+  #     device = "nodev";
+  #     configurationLimit = 5;
+  #  };
+  #};
+
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -106,11 +106,12 @@
 	nodejs_24
 	pharo
 	git
-	bottles
+  wineWowPackages.waylandFull
+  winetricks
 	google-chrome
 	
 	# hyprland
-	kitty
+	alacritty
 	waybar
 	hyprpaper
 	hyprshot
@@ -128,8 +129,7 @@
 	playerctl
 	wl-clipboard
 	marwaita-red
-	wireplumber
-	neovim
+  zafiro-icons
 	home-manager
     ];
   };
@@ -185,6 +185,10 @@
     set tabsize 2
     set tabstospaces
   '';
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.symbols-only
+  ];
 
 # programs.vscode = {
 #    enable = true;

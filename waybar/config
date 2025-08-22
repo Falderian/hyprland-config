@@ -60,8 +60,8 @@
     "format-alt": "{:%A, %B %d, %Y}  "  // Calendar icon (was 󰃭)
   },
   "memory": {
-    "format": "{:>3}% ",  // RAM chip icon (was )
-    "on-click": "kitty -e btop"
+    "format": "{:>3}% ",  // RAM chip icon (was )
+    "on-click": "alacritty -e btop"
   },
   "network": {
     "format-disabled": " Отключён",
@@ -70,7 +70,7 @@
     "format-ethernet": "{bandwidthDownBits:>} ",  // Ethernet icon (was 󰶡)
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Нет сети",
-    "on-click": "kitty -e nmtui",
+    "on-click": "alacritty -e nmtui",
     "interval": 2
   },
   "pipewire": {

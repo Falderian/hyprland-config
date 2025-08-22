@@ -19,21 +19,20 @@ uptime="`uptime | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-hibernate=''
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+shutdown=''
+reboot='󰜉'
+lock='󰌾'
+suspend='󰤄'
+logout='󰗽'
+yes=''
+no=''
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p " $USER@$host" \
-		-mesg " Last Login: $lastlogin 
-  Uptime: $uptime" \
+		-p " $USER@$host" \
+		-mesg "󰍂 Last Login: $lastlogin 
+ 󱑂 Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -57,7 +56,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$hibernate\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -68,8 +67,6 @@ run_cmd() {
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
-		elif [[ $1 == '--hibernate' ]]; then
-			systemctl hibernate
 		elif [[ $1 == '--suspend' ]]; then
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
