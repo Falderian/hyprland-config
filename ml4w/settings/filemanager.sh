@@ -1,1 +1,1 @@
-alacritty -e yazi
+foot -e yazi

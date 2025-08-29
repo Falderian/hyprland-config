@@ -10,32 +10,13 @@
       ./hardware-configuration.nix
     ];
 
-    # Bootloader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.systemd-boot.configurationLimit = 5;
-  #boot.loader = {
-  #  efi = {
-  #    canTouchEfiVariables = true;
-  #  };
-  #  grub = {
-  #     enable = true;
-  #     useOSProber = true;
-  #     efiSupport = true;
-  #     device = "nodev";
-  #     configurationLimit = 5;
-  #  };
-  #};
-
-
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  
+  boot.loader.systemd-boot.configurationLimit = 5;
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "pcie_aspm=off" "amdgpu.aspm=0"];
-
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  hardware.graphics.extraPackages = with pkgs; [
-    amdvlk
-  ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,28 +30,38 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Minsk";
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
   # Enable the X11 windowing system.
-#  services.xserver.enable = true;
+  #services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-#  services.xserver.displayManager.gdm.enable = true;
-#  services.xserver.desktopManager.gnome.enable = true;
-
-  services = {
-#    desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-  };
+  services.xserver.displayManager.gdm.enable = true;
+ # services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
- services.xserver.xkb = {
-   layout = "us";
-   variant = "";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -90,51 +81,53 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
+hardware.graphics.enable32Bit = true; # For 32 bit applications
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.admin = {
+  users.users.staselovich-n = {
     isNormalUser = true;
-    description = "admin";
+    description = "staselovich-n";
     extraGroups = [ "networkmanager" "wheel" ];
-
     packages = with pkgs; [
-	openvpn3
-	spotify
-	telegram-desktop
-	slack
-	nodejs_24
-	pharo
-	git
-  wineWowPackages.waylandFull
-  winetricks
-	google-chrome
-  vscodium  
+    	openvpn3
+	    spotify
+	    telegram-desktop
+	    slack
+	    nodejs_24
+	    pharo
+	    git
+      wineWowPackages.waylandFull
+      winetricks
+      google-chrome
+      vscodium  
 	
-	# hyprland
-	alacritty
-	waybar
-	hyprpaper
-	hyprshot
-	pulsemixer
-	wf-recorder
-	mplayer
-	swaynotificationcenter
-	starship
-	btop-rocm
-	yazi
-	capitaine-cursors
-	rofi-wayland
-	bluetuith
-	playerctl
-	wl-clipboard
-	marwaita-red
-  zafiro-icons
-	home-manager
-  bash-completion
-  wl-clip-persist
-  nwg-look
+    	# hyprland
+      foot
+	    waybar
+	    hyprpaper
+	    hyprshot
+	    pulsemixer
+	    wf-recorder
+	    mplayer
+	    swaynotificationcenter
+	    starship
+	    btop-rocm
+	    yazi
+	    rofi-wayland
+	    bluetuith
+	    playerctl
+      wl-clip-persist
+	    wl-clipboard
+	    marwaita-red
+      zafiro-icons
+      bash-completion
+	    capitaine-cursors
+      nwg-look
+
+      # laptop
+      brightnessctl
     ];
   };
+
 
   services.resolved.enable = true;
   programs.openvpn3.enable = true;
@@ -146,42 +139,6 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.starship.enable = true;
-
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "admin";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.variables = {
-	  GI_TYPELIB_PATH = "/run/current-system/sw/lib/girepository-1.0";
-  };
-
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
-
-  hardware.bluetooth = {
-    enable = true;
-	  powerOnBoot = true;
-    settings = {
-      General = {
-    	  Experimental = true; # Show battery charge of Bluetooth devices
-	    };
-	  };
-  };
 
   environment.etc."nanorc".text = ''
     set tabsize 2
@@ -195,23 +152,42 @@
   programs.bash.shellAliases = {
     start-vpn="openvpn3 session-start --config ~/Projects/Synchrony/client.ovpn";
     start-synchrony="(cd ~/Projects/Synchrony/ui && npm run start:standalone) & (cd ~/Projects/Synchrony/IMS/Pharo11_dev && pharo --headless smt-base.image --script ../resources_project/SMT/scripts/start-analytics-server.st -- workspace=IMS) & wait";
+    touchpad-off="hyprctl keyword \"device[pnp0c50:0b-0911:5288-touchpad]:enabled\" false";
+    touchpad-on="hyprctl keyword \"device[pnp0c50:0b-0911:5288-touchpad]:enabled\" true";
   };
 
-# programs.vscode = {
-#    enable = true;
-#    package = pkgs.vscodium;
-#    extensions = with pkgs.vscode-extensions; [
-#    esbenp.prettier-vscode
-#    mhutchie.git-graph
-#    ];
-#    userSettings = {
-#      "editor.fontFamily" = "Liberation Mono";
-#      "editor.fontS3ize" = 14;      
-#      "editor.formatOnSave" = true;
-#    };
-#  };
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true; # Show battery charge of Bluetooth devices
+      };
+    };
+  };
 
 
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "staselovich-n";
+
+  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
+
+  # Install firefox.
+  programs.firefox.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
+  ];
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -237,6 +213,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
-
+  system.stateVersion = "25.05"; # Did you read the comment?  
 }
+  

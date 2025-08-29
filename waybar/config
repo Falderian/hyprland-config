@@ -22,24 +22,37 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "urgent": "",       // JetBrains Nerd: exclamation triangle (was )
-      "focused": ""       // JetBrains Nerd: solid circle (was )
+      "urgent": "", // JetBrains Nerd: exclamation triangle (was )
+      "focused": "" // JetBrains Nerd: solid circle (was )
     }
   },
-"temperature": {
-	"thermal-zone": 2,
-	"hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input"],
-	"critical-threshold": 80,
-	"format-critical": "{temperatureC}°C ",
-	"format": "{temperatureC}°C "
-},
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 60,
+    "separate-outputs": true,
+    "offscreen-css": true,
+    "offscreen-css-text": "(inactive)",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": " $1",
+      "(.*) - foot": " [$1]"
+    }
+  },
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon2/temp1_input"
+    ],
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C ",
+    "format": "{temperatureC}°C "
+  },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",  // Bell + circle
+      "notification": "<span foreground='red'><sup></sup></span>", // Bell + circle
       "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",  // Moon + circle
+      "dnd-notification": "<span foreground='red'><sup></sup></span>", // Moon + circle
       "dnd-none": "",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "inhibited-none": "",
@@ -54,7 +67,7 @@
     "escape": true
   },
   "custom/appmenu": {
-    "format": "󱄅", 
+    "format": "󱄅",
     "tooltip-format": "Applications",
     "on-click": "~/.config/hypr/scripts/appLauncher.sh",
     "tooltip": true
@@ -65,20 +78,20 @@
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%H:%M}",
-    "format-alt": "{:%A, %B %d, %Y}  "  // Calendar icon (was 󰃭)
+    "format-alt": "{:%A, %B %d, %Y}  " // Calendar icon (was 󰃭)
   },
   "memory": {
-    "format": "{:>3}% ",  // RAM chip icon (was )
-    "on-click": "alacritty -e btop"
+    "format": "{:>3}% ", // RAM chip icon (was )
+    "on-click": "foot -e btop"
   },
   "network": {
     "format-disabled": " Отключён",
-    "format-wifi": "{bandwidthDownBits:>} ",  // Wi-Fi icon (was 󰶡)
+    "format-wifi": "{bandwidthDownBits:>} ", // Wi-Fi icon (was 󰶡)
     "tooltip-format-wifi": "{essid}",
-    "format-ethernet": "{bandwidthDownBits:>} ",  // Ethernet icon (was 󰶡)
+    "format-ethernet": "{bandwidthDownBits:>} ", // Ethernet icon (was 󰶡)
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Нет сети",
-    "on-click": "alacritty -e nmtui",
+    "on-click": "foot -e nmtui",
     "interval": 2
   },
   "pipewire": {
@@ -90,14 +103,14 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",  // Plug icon
+    "format-charging": "{capacity}% ", // Plug icon
     "format-plugged": "{capacity}% ",
     "format-alt": "{icon} {time}",
-    "format-full": "{capacity}% ",      // Battery full
+    "format-full": "{capacity}% ", // Battery full
     "format-icons": [
-      "",  // Battery 0-20%
-      "",  // Battery 20-40%
-      ""   // Battery 40-60%
+      "", // Battery 0-20%
+      "", // Battery 20-40%
+      "" // Battery 40-60%
     ]
   }
 }
