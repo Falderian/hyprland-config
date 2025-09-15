@@ -1,13 +1,6 @@
 @import url("./theme.css");
 
-* {
-  all: unset;
-  font-family: "Liberation Mono";
-  transition: 0.3s;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 4px;
-}
+
 
 .floating-notifications.background .notification-row {
   padding: 0.25rem;
@@ -17,7 +10,7 @@
   border-radius: 4px;
   background-color: @tooltip-background;
   color: @tooltip-text;
-  border: 1px solid @network-color;
+  border: 1px solid #BF616A;
 }
 
 .floating-notifications.background
@@ -305,3 +298,4 @@ trough {
 .widget-mpris-subtitle {
   color: @primary-text;
 }
+

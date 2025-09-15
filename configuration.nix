@@ -59,6 +59,7 @@
   # Enable the GNOME Desktop Environment.
 #  services.xserver.displayManager.gdm.enable = true;
 #  services.xserver.desktopManager.gnome.enable = true;
+#  services.xserver.displayManager.gdm.wayland = true;
 
   services = {
 #    desktopManager.plasma6.enable = true;
@@ -98,41 +99,41 @@
     extraGroups = [ "networkmanager" "wheel" ];
 
     packages = with pkgs; [
-	openvpn3
-	spotify
-	telegram-desktop
-	slack
-	nodejs_24
-	pharo
-	git
-  wineWowPackages.waylandFull
-  winetricks
-	google-chrome
-  vscodium  
-	
-	# hyprland
-	alacritty
-	waybar
-	hyprpaper
-	hyprshot
-	pulsemixer
-	wf-recorder
-	mplayer
-	swaynotificationcenter
-	starship
-	btop-rocm
-	yazi
-	capitaine-cursors
-	rofi-wayland
-	bluetuith
-	playerctl
-	wl-clipboard
-	marwaita-red
-  zafiro-icons
-	home-manager
-  bash-completion
-  wl-clip-persist
-  nwg-look
+    	openvpn3
+	    spotify
+    	telegram-desktop
+    	slack
+    	nodejs_24
+    	pharo
+    	git
+      vscodium  
+      viber
+      google-chrome
+
+     	# hyprland
+      foot
+     	waybar
+    	hyprpaper
+    	hyprshot
+      hyprsunset
+    	pulsemixer
+    	wf-recorder
+      celluloid
+    	swaynotificationcenter
+    	starship
+    	btop-rocm
+    	yazi
+    	capitaine-cursors
+    	rofi-wayland
+    	bluetuith
+    	playerctl
+    	wl-clipboard
+    	marwaita-red
+      zafiro-icons
+      bash-completion
+      wl-clip-persist
+      nwg-look
+      gurk-rs
     ];
   };
 
@@ -146,7 +147,6 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.starship.enable = true;
-
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
@@ -189,7 +189,8 @@
   '';
 
   fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
   
   programs.bash.shellAliases = {
@@ -210,8 +211,7 @@
 #      "editor.formatOnSave" = true;
 #    };
 #  };
-
-
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -238,5 +238,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
