@@ -3,7 +3,8 @@
   "modules-left": [
     "custom/appmenu",
     "battery",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "mpris"
   ],
   "modules-center": [
     "hyprland/window",
@@ -27,15 +28,7 @@
     }
   },
   "hyprland/window": {
-    "format": "{}",
-    "max-length": 60,
-    "separate-outputs": true,
-    "offscreen-css": true,
-    "offscreen-css-text": "(inactive)",
-    "rewrite": {
-      "(.*) — Mozilla Firefox": " $1",
-      "(.*) - foot": " [$1]"
-    }
+    "max-length": 50,
   },
   "temperature": {
     "thermal-zone": 2,
@@ -112,5 +105,14 @@
       "", // Battery 20-40%
       "" // Battery 40-60%
     ]
+  },
+  "mpris": {
+    "player": "spotify",
+    "format": "🎵 {artist} - {title}",
+    "tooltip-format": "<-M/R->",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "max-length": 40,
+    "hide-on-empty": true
   }
 }

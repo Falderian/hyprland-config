@@ -1,5 +1,7 @@
 * {
+  all: unset;
   font-family: "Liberation Mono";
+  transition: 0.3s;
   font-size: 14px;
   font-weight: 500;
   border-radius: 4px;
