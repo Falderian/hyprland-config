@@ -180,4 +180,3 @@ configuration {
 */
 }
 
-@theme "/nix/store/4sn4ydpa872qgwp41kspa5lfdbgd8s5x-rofi-1.7.9+wayland1/share/rofi/themes/Arc-Dark.rasi"

@@ -23,8 +23,8 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "urgent": "", // JetBrains Nerd: exclamation triangle (was )
-      "focused": "" // JetBrains Nerd: solid circle (was )
+      "urgent": "",
+      "focused": ""
     }
   },
   "hyprland/window": {
@@ -37,7 +37,8 @@
     ],
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
-    "format": "{temperatureC}°C "
+    "format": "{temperatureC}°C ",
+    "interval": 1
   },
   "custom/notification": {
     "tooltip": false,
@@ -60,7 +61,7 @@
     "escape": true
   },
   "custom/appmenu": {
-    "format": "󱄅",
+    "format": "󰣇",
     "tooltip-format": "Applications",
     "on-click": "~/.config/hypr/scripts/appLauncher.sh",
     "tooltip": true
@@ -75,7 +76,7 @@
   },
   "memory": {
     "format": "{:>3}% ", // RAM chip icon (was )
-    "on-click": "foot -e btop"
+    "on-click": "kitty -e btop"
   },
   "network": {
     "format-disabled": " Отключён",
@@ -84,11 +85,27 @@
     "format-ethernet": "{bandwidthDownBits:>} ", // Ethernet icon (was 󰶡)
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Нет сети",
-    "on-click": "foot -e nmtui",
+    "on-click": "kitty -e nmtui",
     "interval": 2
   },
-  "pipewire": {
-    "format": "{volume}% \uf028"
+  "pulseaudio": {
+    //"scroll-step": 1,
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% ",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "kitty -e pulsemixer"
   },
   "battery": {
     "states": {
@@ -108,7 +125,7 @@
   },
   "mpris": {
     "player": "spotify",
-    "format": "🎵 {artist} - {title}",
+    "format": " {artist} - {title}",
     "tooltip-format": "<-M/R->",
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",

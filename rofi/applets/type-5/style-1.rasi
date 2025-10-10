@@ -14,7 +14,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Liberation Mono Nerd Font 10";
+    font:                        "JetBrainsMono Nerd Font Propo 12";
     background:                  #231419;
     background-alt:              #2D1E23;
     foreground:                  #FFFFFF;
