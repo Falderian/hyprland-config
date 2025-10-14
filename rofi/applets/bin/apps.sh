@@ -26,7 +26,7 @@ term_cmd='kitty'
 file_cmd='thunar'
 text_cmd='geany'
 web_cmd='firefox'
-music_cmd='foot -e ncmpcpp'
+music_cmd='kitty -e ncmpcpp'
 setting_cmd='xfce4-settings-manager'
 
 # Options

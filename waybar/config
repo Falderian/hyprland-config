@@ -14,8 +14,9 @@
     "memory",
     "temperature",
     "pulseaudio",
-    "clock",
     "tray",
+    "hyprland/language",
+    "clock",
     "custom/notification"
   ],
   "hyprland/workspaces": {
@@ -75,7 +76,7 @@
   },
   "memory": {
     "format": "{:>3}% ", // RAM chip icon (was )
-    "on-click": "foot -e btop"
+    "on-click": "kitty -e btop"
   },
   "network": {
     "format-disabled": " Отключён",
@@ -84,7 +85,7 @@
     "format-ethernet": "{bandwidthDownBits:>} ", // Ethernet icon (was 󰶡)
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Нет сети",
-    "on-click": "foot -e nmtui",
+    "on-click": "kitty -e iwctl",
     "interval": 2
   },
   "pipewire": {
@@ -104,15 +105,32 @@
       "", // Battery 0-20%
       "", // Battery 20-40%
       "" // Battery 40-60%
-    ]
+    ],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
   },
   "mpris": {
-    "player": "spotify",
-    "format": "🎵 {artist} - {title}",
-    "tooltip-format": "<-M/R->",
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
+    "player": "playerctld", // Assumed for active player tracking
+    "format": "{player_icon} {artist} - {title}", // Updated to use dynamic icon
+    "player-icons": {
+      "spotify": "", // Spotify icon (Nerd Font)
+      "firefox": "󰈹", // Firefox icon
+      "telegram-desktop": "", // Telegram icon
+      "default": "🎵" // Fallback for other players
+    },
+    "tooltip-format": "{player}: {status}", // Updated for clarity (shows player name and status)
+    "on-click": "playerctl play-pause", // Your original: Play/pause active player
+    "on-click-right": "playerctl next", // Your original: Next track
+    "on-click-middle": "playerctl previous", // Added: Previous track (playback control)
+    "on-scroll-up": "playerctld shift", // Added: Next player (player switching)
+    "on-scroll-down": "playerctld unshift", // Added: Previous player (player switching)
     "max-length": 40,
     "hide-on-empty": true
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "us",
+    "format-ru": "ru",
+    "tooltip": true
   }
 }

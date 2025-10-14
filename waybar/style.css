@@ -26,6 +26,7 @@ window#waybar {
 #network,
 #clock,
 #battery,
+#language,
 #mpris {
   color: @primary-text;
   padding: 0 8px;
@@ -51,6 +52,7 @@ window#waybar {
 #network:hover,
 #clock:hover,
 #mpris:hover,
+#language:hover,
 #custom-notification:hover {
   border-bottom: 1px solid @hover-text;
   color: @hover-text;
