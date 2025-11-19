@@ -14,8 +14,10 @@
     "memory",
     "temperature",
     "pulseaudio",
-    "clock",
+    "bluetooth",
     "tray",
+    "hyprland/language",
+    "clock",
     "custom/notification"
   ],
   "hyprland/workspaces": {
@@ -23,8 +25,8 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "focused": ""
+      "urgent": "", // JetBrains Nerd: exclamation triangle (was )
+      "focused": "" // JetBrains Nerd: solid circle (was )
     }
   },
   "hyprland/window": {
@@ -37,21 +39,20 @@
     ],
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
-    "format": "{temperatureC}°C ",
-    "interval": 1
+    "format": "{temperatureC}°C "
   },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>", // Bell + circle
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>", // Moon + circle
-      "dnd-none": "",
+      "notification": "󱅫", // Bell + circle
+      "none": "󰂚",
+      "dnd-notification": "󰂛N", // Moon + circle
+      "dnd-none": "󰂛",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰂛"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -85,27 +86,30 @@
     "format-ethernet": "{bandwidthDownBits:>} ", // Ethernet icon (was 󰶡)
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Нет сети",
-    "on-click": "kitty -e nmtui",
+    "on-click": "kitty -e iwctl",
     "interval": 2
   },
   "pulseaudio": {
-    //"scroll-step": 1,
     "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% ",
-    "format-muted": "",
+    "format-muted": "Muted 󰸈",
     "format-icons": {
-      "headphones": "",
-      "handsfree": "",
-      "headset": "",
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰋎",
       "phone": "",
       "portable": "",
       "car": "",
       "default": [
+        "",
         "",
         ""
       ]
     },
-    "on-click": "kitty -e pulsemixer"
+    "scroll-step": 5,
+    "on-click": "kitty -e pulsemixer",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "tooltip-format": "{desc} • {volume}%"
   },
   "battery": {
     "states": {
@@ -121,15 +125,43 @@
       "", // Battery 0-20%
       "", // Battery 20-40%
       "" // Battery 40-60%
-    ]
+    ],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
   },
   "mpris": {
-    "player": "spotify",
-    "format": " {artist} - {title}",
-    "tooltip-format": "<-M/R->",
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
+    "player": "playerctld", // Assumed for active player tracking
+    "format": "{player_icon} {artist} - {title}", // Updated to use dynamic icon
+    "player-icons": {
+      "spotify": "", // Spotify icon (Nerd Font)
+      "firefox": "󰈹", // Firefox icon
+      "telegram-desktop": "", // Telegram icon
+      "default": "🎵" // Fallback for other players
+    },
+    "tooltip-format": "{player}: {status}", // Updated for clarity (shows player name and status)
+    "on-click": "playerctl play-pause", // Your original: Play/pause active player
+    "on-click-right": "playerctl next", // Your original: Next track
+    "on-click-middle": "playerctl previous", // Added: Previous track (playback control)
+    "on-scroll-up": "playerctld shift", // Added: Next player (player switching)
+    "on-scroll-down": "playerctld unshift", // Added: Previous player (player switching)
     "max-length": 40,
     "hide-on-empty": true
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "us",
+    "format-ru": "ru",
+    "tooltip": true
+  },
+  "bluetooth": {
+    "controller": "controller1",
+    "format": "󰂯 {status}",
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "",
+    "format-connected": "󰂱 {num_connections}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "kitty -e bluetuith"
   }
 }

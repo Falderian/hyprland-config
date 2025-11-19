@@ -1,1 +1,1 @@
-waterfox
+firefox

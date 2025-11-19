@@ -1,6 +1,6 @@
 * {
   all: unset;
-  font-family: "JetBrainsMono Nerd Font Propo";
+  font-family: "Comic Sans MS";
   transition: 0.3s;
   font-size: 14px;
   font-weight: 500;
@@ -8,20 +8,37 @@
 }
 
 @define-color transparent transparent;
-@define-color highlight-background #3B4252; /* Polar Night (dark background) */
-@define-color tooltip-text #ECEFF4; /* Snow Storm (light text) */
-@define-color tooltip-background #2e3440; /* Polar Night (slightly lighter bg) */
-@define-color background #242424; /* Polar Night */
-@define-color primary-text #D8DEE9; /* Snow Storm */
-@define-color focused-color #BF616A; /* Aurora Red */
-@define-color highlight-text #EBCB8B; /* Aurora Yellow */
-@define-color secondary-background #2e3440; /* Polar Night (alternative bg) */
-@define-color inactive-color #616E88; /* Desaturated blue-gray */
-@define-color occupied-color #A3BE8C; /* Aurora Green */
-@define-color hover-color #B48EAD; /* Aurora Purple */
-@define-color temperature-color #BF616A; /* Aurora Red */
-@define-color pulseaudio-color #B48EAD; /* Aurora Purple */
-@define-color cpu-color #D08770; /* Aurora Orange */
-@define-color memory-color #88C0D0; /* Frost Cyan */
-@define-color tray-color #5E81AC; /* Frost Blue */
-@define-color network-color #81A1C1; /* Frost Blue (lighter) */
+@define-color highlight-background #3B4252;
+/* Polar Night (dark background) */
+@define-color tooltip-text #ECEFF4;
+/* Snow Storm (light text) */
+@define-color tooltip-background #2e3440;
+/* Polar Night (slightly lighter bg) */
+@define-color background #242424;
+/* Polar Night */
+@define-color primary-text #D8DEE9;
+/* Snow Storm */
+@define-color focused-color #BF616A;
+/* Aurora Red */
+@define-color highlight-text #EBCB8B;
+/* Aurora Yellow */
+@define-color secondary-background #2e3440;
+/* Polar Night (alternative bg) */
+@define-color inactive-color #616E88;
+/* Desaturated blue-gray */
+@define-color occupied-color #A3BE8C;
+/* Aurora Green */
+@define-color hover-color #B48EAD;
+/* Aurora Purple */
+@define-color temperature-color #BF616A;
+/* Aurora Red */
+@define-color pulseaudio-color #B48EAD;
+/* Aurora Purple */
+@define-color cpu-color #D08770;
+/* Aurora Orange */
+@define-color memory-color #88C0D0;
+/* Frost Cyan */
+@define-color tray-color #5E81AC;
+/* Frost Blue */
+@define-color network-color #81A1C1;
+/* Frost Blue (lighter) */

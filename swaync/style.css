@@ -13,102 +13,54 @@
   border: 1px solid #BF616A;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification {
+.floating-notifications.background .notification-row .notification-background .notification {
   padding: 0.25rem;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification.critical {
+.floating-notifications.background .notification-row .notification-background .notification.critical {
   border: 1px solid @focused-color;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  .notification-content
-  .summary {
+.floating-notifications.background .notification-row .notification-background .notification .notification-content .summary {
   margin: 0.25rem;
   color: @primary-text;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  .notification-content
-  .body {
+.floating-notifications.background .notification-row .notification-background .notification .notification-content .body {
   margin: 0.25rem;
   color: @inactive-color;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > * {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* {
   min-height: 1rem;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
   color: @primary-text;
   background-color: @secondary-background;
   border: 1px solid @primary-text;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action:hover {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
   background-color: @highlight-background;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action:active {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
   background-color: @primary-text;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .close-button {
+.floating-notifications.background .notification-row .notification-background .close-button {
   margin: 0.25rem;
   padding: 0.25rem;
   color: @primary-text;
   background-color: @focused-color;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .close-button:hover {
+.floating-notifications.background .notification-row .notification-background .close-button:hover {
   color: @background;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .close-button:active {
+.floating-notifications.background .notification-row .notification-background .close-button:active {
   background-color: @hover-color;
 }
 
@@ -145,71 +97,36 @@
   /* border: 1px solid @primary-text; */
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification.critical {
+.control-center .notification-row .notification-background .notification.critical {
   border: 1px solid @focused-color;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification
-  .notification-content {
+.control-center .notification-row .notification-background .notification .notification-content {
   padding: 0.25rem;
   color: @primary-text;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification
-  .notification-content
-  .summary {
+.control-center .notification-row .notification-background .notification .notification-content .summary {
   margin: 0.5rem;
   color: @primary-text;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification
-  .notification-content
-  .body {
+.control-center .notification-row .notification-background .notification .notification-content .body {
   margin: 0.5rem;
   color: @inactive-color;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action {
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
   color: @primary-text;
   background-color: @secondary-background;
   border: 1px solid @primary-text;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action:hover {
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
   background-color: @highlight-background;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action:active {
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
   background-color: @primary-text;
 }
 
@@ -224,10 +141,7 @@
   color: @background;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .close-button:active {
+.control-center .notification-row .notification-background .close-button:active {
   background-color: @hover-color;
 }
 
@@ -266,16 +180,16 @@ trough {
   color: @inactive-color;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
   background: @secondary-background;
   border: 1px solid @primary-text;
 }
 
-.widget-dnd > switch:checked slider {
+.widget-dnd>switch:checked slider {
   background: @pulseaudio-color;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
   background: @primary-text;
   margin: 0.25rem;
 }
@@ -298,4 +212,3 @@ trough {
 .widget-mpris-subtitle {
   color: @primary-text;
 }
-

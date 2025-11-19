@@ -74,9 +74,9 @@ run_cmd() {
 	elif [[ "$1" == '--opt3' ]]; then
 		${polkit_cmd} geany
 	elif [[ "$1" == '--opt4' ]]; then
-		${polkit_cmd} foot -e ranger
+		${polkit_cmd} kitty -e ranger
 	elif [[ "$1" == '--opt5' ]]; then
-		${polkit_cmd} foot -e vim
+		${polkit_cmd} kitty -e vim
 	fi
 }
 
