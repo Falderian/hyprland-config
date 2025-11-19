@@ -27,6 +27,7 @@ window#waybar {
 #clock,
 #battery,
 #language,
+#bluetooth,
 #mpris {
   color: @primary-text;
   padding: 0 8px;
@@ -53,6 +54,7 @@ window#waybar {
 #clock:hover,
 #mpris:hover,
 #language:hover,
+#bluetooth:hover,
 #custom-notification:hover {
   border-bottom: 1px solid @hover-text;
   color: @hover-text;
@@ -62,7 +64,7 @@ window#waybar {
   font-size: 2rem;
   color: @primary-text;
   padding-left: 5px;
-  padding-right: 13px;
+  padding-right: 8px;
   transition: all 0.5s;
 }
 
@@ -103,7 +105,9 @@ window#waybar {
   border-bottom: 2px solid @hover-color;
 }
 
+
 /* Individual Module Colors */
+
 #temperature {
   color: @temperature-color;
 }

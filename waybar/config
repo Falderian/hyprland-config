@@ -14,6 +14,7 @@
     "memory",
     "temperature",
     "pulseaudio",
+    "bluetooth",
     "tray",
     "hyprland/language",
     "clock",
@@ -44,14 +45,14 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>", // Bell + circle
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>", // Moon + circle
-      "dnd-none": "",
+      "notification": "󱅫", // Bell + circle
+      "none": "󰂚",
+      "dnd-notification": "󰂛N", // Moon + circle
+      "dnd-none": "󰂛",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰂛"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -61,7 +62,7 @@
     "escape": true
   },
   "custom/appmenu": {
-    "format": "󱄅",
+    "format": "󰣇",
     "tooltip-format": "Applications",
     "on-click": "~/.config/hypr/scripts/appLauncher.sh",
     "tooltip": true
@@ -88,8 +89,27 @@
     "on-click": "kitty -e iwctl",
     "interval": 2
   },
-  "pipewire": {
-    "format": "{volume}% \uf028"
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "Muted 󰸈",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5,
+    "on-click": "kitty -e pulsemixer",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "tooltip-format": "{desc} • {volume}%"
   },
   "battery": {
     "states": {
@@ -132,5 +152,16 @@
     "format-en": "us",
     "format-ru": "ru",
     "tooltip": true
+  },
+  "bluetooth": {
+    "controller": "controller1",
+    "format": "󰂯 {status}",
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "",
+    "format-connected": "󰂱 {num_connections}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "kitty -e bluetuith"
   }
 }

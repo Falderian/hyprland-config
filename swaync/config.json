@@ -23,6 +23,7 @@
   "script-fail-notify": true,
   "widgets": [
     "title",
+    "buttons-grid",
     "mpris",
     "notifications"
   ],
@@ -31,6 +32,15 @@
       "text": "Notifications",
       "clear-all-button": true,
       "button-text": "Clear"
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "id": "mode-switcher",
+          "label": "Switch Theme ",
+          "command": "~/.config/hypr/scripts/toggle-gtk-mode.sh"
+        }
+      ]
     },
     "mpris": {
       "image-size": 48,
