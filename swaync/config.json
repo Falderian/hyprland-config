@@ -37,8 +37,13 @@
       "actions": [
         {
           "id": "mode-switcher",
-          "label": "Switch Theme ",
+          "label": "󰔎",
           "command": "~/.config/hypr/scripts/toggle-gtk-mode.sh"
+        },
+        {
+          "id": "night-switcher",
+          "label": "",
+          "command": "~/.config/hypr/scripts/hyprsunset.sh"
         }
       ]
     },
