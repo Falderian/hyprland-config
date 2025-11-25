@@ -101,7 +101,7 @@
     },
     // Memory
     "memory": {
-        "format": "󰍛  {used} GB  ", // Example memory icon
+        "format": "󰍛 {used} GB  ", // Example memory icon
         "on-click": "kitty -e htop"
     },
     // Load Average
@@ -157,7 +157,7 @@
     // Pulseaudio
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
