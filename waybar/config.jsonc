@@ -1,14 +1,7 @@
 {
   "layer": "top",
-  "modules-left": [
-    "custom/appmenu",
-    "battery",
-    "hyprland/workspaces",
-    "mpris"
-  ],
-  "modules-center": [
-    "hyprland/window",
-  ],
+  "modules-left": ["custom/appmenu", "battery", "hyprland/workspaces", "mpris"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "network",
     "memory",
@@ -30,13 +23,11 @@
     }
   },
   "hyprland/window": {
-    "max-length": 50,
+    "max-length": 50
   },
   "temperature": {
     "thermal-zone": 2,
-    "hwmon-path": [
-      "/sys/class/hwmon/hwmon2/temp1_input"
-    ],
+    "hwmon-path": ["/sys/class/hwmon/hwmon4/temp1_input"],
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C "
@@ -77,7 +68,7 @@
   },
   "memory": {
     "format": "{:>3}% ", // RAM chip icon (was )
-    "on-click": "kitty -e btop"
+    "on-click": "foot -e btop"
   },
   "network": {
     "format-disabled": " Отключён",
@@ -86,7 +77,7 @@
     "format-ethernet": "{bandwidthDownBits:>} ", // Ethernet icon (was 󰶡)
     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": " Нет сети",
-    "on-click": "kitty -e iwctl",
+    "on-click": "foot -e iwctl",
     "interval": 2
   },
   "pulseaudio": {
@@ -99,14 +90,10 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
     "scroll-step": 5,
-    "on-click": "kitty -e pulsemixer",
+    "on-click": "foot -e pulsemixer",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
     "tooltip-format": "{desc} • {volume}%"
@@ -162,6 +149,6 @@
     "format-connected": "󰂱 {num_connections}",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "kitty -e bluetuith"
+    "on-click": "foot -e bluetuith"
   }
 }

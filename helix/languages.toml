@@ -1,0 +1,31 @@
+[[language]]
+name = "typescript"
+auto-format = true
+formatter = { command = "/usr/sbin/prettier", args = ["--parser", "typescript", "--stdin-filepath", "file.ts"] }
+
+[[language]]
+name = "tsx"
+auto-format = true
+formatter = { command = "/usr/sbin/prettier", args = ["--parser", "typescript", "--stdin-filepath", "file.tsx"] }
+
+[[language]]
+name = "javascript"
+auto-format = true
+formatter = { command = "/usr/sbin/prettier", args = ["--parser", "typescript", "--stdin-filepath", "file.js"] }
+
+[language-server.json-lsp]
+command = "vscode-json-languageserver"
+args = ["--stdio"]
+
+[[language]]
+name = "json"
+language-servers = ["json-lsp"]
+auto-format = true
+formatter = { command = "/usr/sbin/prettier", args = ["--parser", "json", "--stdin-filepath", "file.json"] }
+
+[[language]]
+name = "jsonc"
+language-servers = ["json-lsp"]
+auto-format = true
+formatter = { command = "/usr/sbin/prettier", args = ["--parser", "json", "--stdin-filepath", "file.jsonc"] }
+file-types = ["jsonc"]

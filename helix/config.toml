@@ -1,0 +1,4 @@
+theme = "dark_plus"
+
+[keys.normal]
+C-s = ":write" # Ctrl and 's' to write
