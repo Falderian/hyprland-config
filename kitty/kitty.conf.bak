@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_THEME
-# One Half Dark
+# Dracula
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -9,7 +9,7 @@ padding_width 10
 padding_height 10
 window_padding_width 10
 window_padding_height 10
-font_family JetBrainsMono-Regular
+# font_family JetBrainsMono-Regular
 font_size 11.0
 
 
