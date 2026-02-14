@@ -14,7 +14,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Comic Sans MS 11";
+    font:                        "Roboto Flex 12";
     background:                  #37363b;       
     background-alt:              #29242b;        
     foreground:                  #D8DEE9;        
