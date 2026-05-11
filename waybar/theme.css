@@ -1,7 +1,8 @@
 * {
-  font-family: "Adwaita Mono";
+  font-family: "JetBrains Mono";
   font-size: 14px;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 @define-color transparent transparent;

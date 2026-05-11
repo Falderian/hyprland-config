@@ -1,0 +1,25 @@
+layer=overlay
+max-visible=5
+default-timeout=5000
+
+background-color=#2E3440
+text-color=#D8DEE9
+border-size=2
+border-color=#BF616A
+border-radius=4
+padding=10
+margin=10
+
+font=JetBrains Mono 11
+progress-color=#88C0D0
+sort=-time
+
+[urgency=low]
+border-color=#616E88
+
+[urgency=normal]
+border-color=#BF616A
+
+[urgency=high]
+border-color=#BF616A
+default-timeout=0
