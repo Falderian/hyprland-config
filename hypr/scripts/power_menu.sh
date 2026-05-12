@@ -14,7 +14,7 @@
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/type-5"
 theme='style-1'
- 
+
 lastlogin="$(last $USER | head -n1 | tr -s ' ' | cut -d' ' -f5,6,7)"
 uptime="$(uptime | sed -e 's/up //g')"
 host=$(hostname)
@@ -24,15 +24,15 @@ reboot='󰜉'
 lock='󰌾'
 suspend='󰤄'
 logout='󰗽'
- 
+
 rofi_cmd() {
     rofi -dmenu \
         -p " $USER@$host" \
-        -mesg "󰍂 Last Login: $lastlogin 
+        -mesg "󰍂 Last Login: $lastlogin
  󱑂 Uptime: $uptime" \
         -theme ${dir}/${theme}.rasi
 }
- 
+
 run_rofi() {
     echo -e "$suspend\n$shutdown\n$reboot\n$lock\n$logout" | rofi_cmd
 }
@@ -46,7 +46,7 @@ case ${chosen} in
         systemctl reboot
         ;;
     $lock)
-        hyprlock -c ~/.config/hyprlock/hyprlock.conf 
+        hyprlock -c ~/.config/hyprlock/hyprlock.conf
         ;;
     $suspend)
         systemctl suspend

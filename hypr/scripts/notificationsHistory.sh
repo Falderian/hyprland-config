@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Adi1090x Theme Paths
 dir="$HOME/.config/rofi/launchers/type-6"
 theme='style-5'
 

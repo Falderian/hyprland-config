@@ -1,10 +1,8 @@
-theme = dark: custom-dark, light: custom-light
-
-# Font and Padding settings
+#theme = dark: custom-dark, light: custom-light
+theme = Dayfox
 font-family = "JetBrains Mono"
 font-size = 11
 window-padding-x = 15
 window-padding-y = 15
 
 confirm-close-surface = false
-shell-integration = detect
